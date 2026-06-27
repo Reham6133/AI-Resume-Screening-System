@@ -4,7 +4,11 @@ import easyocr
 from PIL import Image
 from sentence_transformers import SentenceTransformer, util
 model = SentenceTransformer("all-MiniLM-L6-v2")
-reader = easyocr.Reader(['en'])
+@st.cache_resource
+def load_reader():
+    return easyocr.Reader(['en'])
+
+reader = load_reader()
 st.set_page_config(
     page_title="AI Resume Screening",
     page_icon="📄",
