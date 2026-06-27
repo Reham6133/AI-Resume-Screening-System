@@ -1,0 +1,7 @@
+streamlit
+easyocr
+sentence-transformers
+torch
+pillow
+scikit-learn
+numpy
